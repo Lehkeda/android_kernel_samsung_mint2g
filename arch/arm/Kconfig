@@ -106,6 +106,10 @@ config ARM
 	select HAVE_C_RECORDMCOUNT
 	select HAVE_GENERIC_HARDIRQS
 	select HAVE_SPARSE_IRQ
+<<<<<<< HEAD
+=======
+	select HAVE_ARCH_SECCOMP_FILTER
+>>>>>>> 5b12c65... CHROMIUM: arch/arm: select HAVE_ARCH_SECCOMP_FILTER
 	select GENERIC_IRQ_SHOW
 	help
 	  The ARM series is a line of low-power-consumption RISC chip designs
