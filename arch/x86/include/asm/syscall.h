@@ -16,12 +16,10 @@
 #include <linux/audit.h>
 #include <linux/sched.h>
 #include <linux/err.h>
-<<<<<<< HEAD
-=======
 #include <asm/asm-offsets.h>	/* For NR_syscalls */
 #include <asm/unistd.h>
 #include <asm/thread_info.h>	/* for TS_COMPAT */
->>>>>>> 35d3023... BACKPORT: arch/x86: add syscall_get_arch to syscall.h
+
 
 extern const unsigned long sys_call_table[];
 
