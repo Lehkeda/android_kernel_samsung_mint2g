@@ -178,8 +178,6 @@ config HAVE_ARCH_MUTEX_CPU_RELAX
 config HAVE_RCU_TABLE_FREE
 	bool
 
-<<<<<<< HEAD
-=======
 config ARCH_HAVE_NMI_SAFE_CMPXCHG
 	bool
 
@@ -217,5 +215,4 @@ config SECCOMP_FILTER
 
 	  See Documentation/prctl/seccomp_filter.txt for details.
 
->>>>>>> 55af486... BACKPORT: seccomp: add system call filtering using BPF
 source "kernel/gcov/Kconfig"

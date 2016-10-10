@@ -13,11 +13,8 @@
  *        of Berkeley Packet Filters/Linux Socket Filters.
  */
 
-<<<<<<< HEAD
-=======
 #include <linux/atomic.h>
 #include <linux/audit.h>
->>>>>>> 55af486... BACKPORT: seccomp: add system call filtering using BPF
 #include <linux/seccomp.h>
 #include <linux/sched.h>
 #include <linux/compat.h>
@@ -395,12 +392,9 @@ void __secure_computing(int this_syscall)
 #ifdef SECCOMP_DEBUG
 	dump_stack();
 #endif
-<<<<<<< HEAD
 	do_exit(SIGKILL);
-=======
 	audit_seccomp(this_syscall);
 	do_exit(exit_sig);
->>>>>>> 55af486... BACKPORT: seccomp: add system call filtering using BPF
 }
 
 long prctl_get_seccomp(void)
