@@ -97,7 +97,6 @@ typedef struct siginfo {
 			int _syscall;	/* triggering system call number */
 			unsigned int _arch;	/* AUDIT_ARCH_* of syscall */
 		} _sigsys;
->>>>>>> ed9770e... BACKPORT: seccomp: Add SECCOMP_RET_TRAP
 	} _sifields;
 } siginfo_t;
 

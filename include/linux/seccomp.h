@@ -67,11 +67,13 @@ struct seccomp {
 	struct seccomp_filter *filter;
 };
 
-extern void __secure_computing(int);
-static inline void secure_computing(int this_syscall)
+extern void __secure_computing(int) __deprecated;
+extern int __secure_computing_int(int);
+static inline int secure_computing(int this_syscall)
 {
 	if (unlikely(test_thread_flag(TIF_SECCOMP)))
-		__secure_computing(this_syscall);
+		return  __secure_computing_int(this_syscall);
+	return 0;
 }
 
 /* A wrapper for architectures supporting only SECCOMP_MODE_STRICT. */
