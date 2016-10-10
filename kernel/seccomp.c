@@ -384,10 +384,7 @@ void __secure_computing(int this_syscall)
 	int mode = current->seccomp.mode;
 	int exit_sig = 0;
 	int *syscall;
-<<<<<<< HEAD
-=======
 	u32 ret;
->>>>>>> fdd02b5... BACKPORT: seccomp: fix build warnings when there is no CONFIG_SECCOMP_FILTER
 
 	switch (mode) {
 	case SECCOMP_MODE_STRICT:
@@ -404,15 +401,12 @@ void __secure_computing(int this_syscall)
 		ret = SECCOMP_RET_KILL;
 		break;
 #ifdef CONFIG_SECCOMP_FILTER
-<<<<<<< HEAD
 	case SECCOMP_MODE_FILTER:
 		if (seccomp_run_filters(this_syscall) == SECCOMP_RET_ALLOW)
 			return;
 		seccomp_filter_log_failure(this_syscall);
-=======
 	case SECCOMP_MODE_FILTER: {
 		int data;
->>>>>>> fdd02b5... BACKPORT: seccomp: fix build warnings when there is no CONFIG_SECCOMP_FILTER
 		ret = seccomp_run_filters(this_syscall);
 		data = ret & SECCOMP_RET_DATA;
 		ret &= SECCOMP_RET_ACTION;
@@ -463,14 +457,11 @@ void __secure_computing(int this_syscall)
 	do_exit(SIGKILL);
 	audit_seccomp(this_syscall);
 	do_exit(exit_sig);
-<<<<<<< HEAD
-=======
 #ifdef CONFIG_SECCOMP_FILTER
 skip:
 	audit_seccomp(this_syscall, exit_sig, ret);
 #endif
 	return -1;
->>>>>>> fdd02b5... BACKPORT: seccomp: fix build warnings when there is no CONFIG_SECCOMP_FILTER
 }
 
 long prctl_get_seccomp(void)
