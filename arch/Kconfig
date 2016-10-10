@@ -178,4 +178,44 @@ config HAVE_ARCH_MUTEX_CPU_RELAX
 config HAVE_RCU_TABLE_FREE
 	bool
 
+<<<<<<< HEAD
+=======
+config ARCH_HAVE_NMI_SAFE_CMPXCHG
+	bool
+
+config HAVE_ALIGNED_STRUCT_PAGE
+	bool
+	help
+	  This makes sure that struct pages are double word aligned and that
+	  e.g. the SLUB allocator can perform double word atomic operations
+	  on a struct page for better performance. However selecting this
+	  might increase the size of a struct page by a word.
+
+config HAVE_CMPXCHG_LOCAL
+	bool
+
+config HAVE_CMPXCHG_DOUBLE
+	bool
+
+config ARCH_WANT_OLD_COMPAT_IPC
+	bool
+
+config HAVE_ARCH_SECCOMP_FILTER
+	bool
+	help
+	  This symbol should be selected by an architecure if it provides
+	  asm/syscall.h, specifically syscall_get_arguments() and
+	  syscall_get_arch().
+
+config SECCOMP_FILTER
+	def_bool y
+	depends on HAVE_ARCH_SECCOMP_FILTER && SECCOMP && NET
+	help
+	  Enable tasks to build secure computing environments defined
+	  in terms of Berkeley Packet Filter programs which implement
+	  task-defined system call filtering polices.
+
+	  See Documentation/prctl/seccomp_filter.txt for details.
+
+>>>>>>> 55af486... BACKPORT: seccomp: add system call filtering using BPF
 source "kernel/gcov/Kconfig"
