@@ -498,6 +498,7 @@ static int ptrace_setoptions(struct task_struct *child, unsigned long data)
 	if (data & PTRACE_O_TRACEFORK)
 		child->ptrace |= PT_TRACE_FORK;
 
+<<<<<<< HEAD
 	if (data & PTRACE_O_TRACEVFORK)
 		child->ptrace |= PT_TRACE_VFORK;
 
@@ -514,6 +515,12 @@ static int ptrace_setoptions(struct task_struct *child, unsigned long data)
 		child->ptrace |= PT_TRACE_EXIT;
 
 	return (data & ~PTRACE_O_MASK) ? -EINVAL : 0;
+=======
+	if (data & PTRACE_O_TRACESECCOMP)
+		child->ptrace |= PT_TRACE_SECCOMP;
+
+	return 0;
+>>>>>>> 8dc52ab... BACKPORT: ptrace,seccomp: Add PTRACE_SECCOMP support
 }
 
 static int ptrace_getsiginfo(struct task_struct *child, siginfo_t *info)
