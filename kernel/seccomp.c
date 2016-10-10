@@ -392,7 +392,6 @@ void __secure_computing(int this_syscall)
 	case SECCOMP_MODE_FILTER:
 		if (seccomp_run_filters(this_syscall) == SECCOMP_RET_ALLOW)
 			return;
-<<<<<<< HEAD
 		seccomp_filter_log_failure(this_syscall);
 	case SECCOMP_MODE_FILTER: {
 		int data;
@@ -436,8 +435,6 @@ void __secure_computing(int this_syscall)
 		default:
 			break;
 		}
-=======
->>>>>>> c43cafd... BACKPORT: seccomp: remove duplicated failure logging
 		exit_sig = SIGSYS;
 		break;
 	}
@@ -449,12 +446,9 @@ void __secure_computing(int this_syscall)
 #ifdef SECCOMP_DEBUG
 	dump_stack();
 #endif
-<<<<<<< HEAD
 	do_exit(SIGKILL);
 	audit_seccomp(this_syscall);
-=======
 	audit_seccomp(this_syscall, exit_code, SECCOMP_RET_KILL);
->>>>>>> c43cafd... BACKPORT: seccomp: remove duplicated failure logging
 	do_exit(exit_sig);
 #ifdef CONFIG_SECCOMP_FILTER
 skip:
