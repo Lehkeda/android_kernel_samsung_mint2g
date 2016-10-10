@@ -50,15 +50,15 @@
 #define __syscall_clobber "r11","cx","memory"
 
 DEFINE_VVAR(int, vgetcpu_mode);
-<<<<<<< HEAD
+
 DEFINE_VVAR(struct vsyscall_gtod_data, vsyscall_gtod_data) =
-=======
+
 DEFINE_VVAR(struct vsyscall_gtod_data, vsyscall_gtod_data);
 
 static enum { EMULATE, NATIVE, NONE } vsyscall_mode = NATIVE;
 
 static int __init vsyscall_setup(char *str)
->>>>>>> 8628ec9... CHROMIUM: Default vsyscall to NATIVE again
+
 {
 	.lock = __SEQLOCK_UNLOCKED(__vsyscall_gtod_data.lock),
 	.sysctl_enabled = 1,
