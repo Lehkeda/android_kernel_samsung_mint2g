@@ -68,8 +68,7 @@
 #define PTRACE_EVENT_EXEC	4
 #define PTRACE_EVENT_VFORK_DONE	5
 #define PTRACE_EVENT_EXIT	6
-<<<<<<< HEAD
-=======
+
 #define PTRACE_EVENT_SECCOMP	7
 
 /* Extended result codes which enabled by means other than options.  */
@@ -86,7 +85,7 @@
 #define PTRACE_O_TRACESECCOMP	(1 << PTRACE_EVENT_SECCOMP)
 
 #define PTRACE_O_MASK		0x0000007f
->>>>>>> 8dc52ab... BACKPORT: ptrace,seccomp: Add PTRACE_SECCOMP support
+
 
 #include <asm/ptrace.h>
 
@@ -101,7 +100,7 @@
 
 #define PT_PTRACED	0x00000001
 #define PT_DTRACE	0x00000002	/* delayed trace (used on m68k, i386) */
-<<<<<<< HEAD
+
 #define PT_TRACESYSGOOD	0x00000004
 #define PT_PTRACE_CAP	0x00000008	/* ptracer can follow suid-exec */
 #define PT_TRACE_FORK	0x00000010
@@ -112,7 +111,7 @@
 #define PT_TRACE_EXIT	0x00000200
 
 #define PT_TRACE_MASK	0x000003f4
-=======
+
 #define PT_PTRACE_CAP	0x00000004	/* ptracer can follow suid-exec */
 
 #define PT_OPT_FLAG_SHIFT	3
@@ -128,7 +127,7 @@
 #define PT_TRACE_SECCOMP	PT_EVENT_FLAG(PTRACE_EVENT_SECCOMP)
 
 #define PT_TRACE_MASK	0x000007f4
->>>>>>> 8dc52ab... BACKPORT: ptrace,seccomp: Add PTRACE_SECCOMP support
+
 
 /* single stepping state bits (used on ARM and PA-RISC) */
 #define PT_SINGLESTEP_BIT	31
