@@ -1979,7 +1979,7 @@ int hci_recv_frame(struct sk_buff *skb)
 	struct hci_dev *hdev = (struct hci_dev *) skb->dev;
 	if (!hdev || (!test_bit(HCI_UP, &hdev->flags)
 				&& !test_bit(HCI_INIT, &hdev->flags))) {
-		hci_uart_tty_read_hook(skb);
+		//hci_uart_tty_read_hook(skb);
 		kfree_skb(skb);
 		return -ENXIO;
 	}
