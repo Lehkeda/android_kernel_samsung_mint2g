@@ -28,7 +28,8 @@ config SECURITY_APPARMOR_BOOTPARAM_VALUE
 	  kernel parameter will default to 1, enabling AppArmor at
 	  boot.
 
-	  If you are unsure how to answer this question, answer 1.+
+	  If you are unsure how to answer this question, answer 1.
+
 config SECURITY_APPARMOR_STATS
 	bool "enable debug statistics"
 	depends on SECURITY_APPARMOR
